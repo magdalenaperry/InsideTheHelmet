@@ -1,4 +1,6 @@
+<div id="top"></div>
 
+<div align="center">
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -6,13 +8,16 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-
-# InsideTheHelmet
+---
 
 <!-- <a href="https://github.com/magdalenaperry/InsideTheHelmet">
     <img src="https://via.placeholder.com/200" alt="Logo" width="100%" height="100%">
   </a> -->
+    
+# Inside The Helmet
 
+</div>    
+    
 ## Table of Contents
 1. [Description](#description)
 1. [Technologies](#technologies)
