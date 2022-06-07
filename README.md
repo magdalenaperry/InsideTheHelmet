@@ -19,71 +19,133 @@
 
 ## Table of Contents
 1. [Description](#description)
-2. [Installation](#installation)
+1. [Technologies](#technologies)
+1. [Prerequisites](#prerequisites)
+3. [Installation](#installation)
 3. [Usage](#usage)
-4. [Visuals](#visuals)
-5. [License](#license)
-6. [Contributions](#contributions)
-7. [Tests](#tests)
-8. [Questions](#questions)
+2. [Visuals](#visuals)
+8. [Contributors](#contributors)
+9. [Roadmap](#roadmap)
+10. [Contact](#contact)
+11. [Acknowledgements](#acknowledgements)
 
 ---
 ## Description
+Los Amigos is a mobile first, responsive web application built with user interface experience in mind. 
+  
+#### Deployed Links:  
+
+[Los Amigos Link](https://morning-tor-09427.herokuapp.com/)
 
 
-### Built With
-
-
-### Prerequisites
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ---
+
+## Technologies
+- MYSQL
+- Sequelize
+- Bootstrap
+- Handlebars.js
+- JavaScript MVC
+- Express
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+---
+
+## Prerequisites
+1. Node.js
+    - [Node.js download](https://nodejs.org/en/)
+2. verify installation
+```  
+node -v
+npm -v
+```   
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+---
+
 ## Installation
-    
+1. Install dependencies at root
+```
+npm install
+```
+
+2. Create MYSQL schema
+```
+mysql -u root
+  SOURCE db/schema.sql
+  exit
+```
+3. seed data
+```
+npm run seed 
+```
+
+4. Create a .env file at the root of your file and add the following environment variables
+```
+  DB_NAME=NAMEOFYOURDB
+  DB_USER=root
+  DB_PASSWORD=yourdbpasswordatsetup
+```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ---
-## Usage
 
+## Usage  
 
+Run the application
+```
+npm start (or)
+node server.js
+```
 ---
+
 ## Visuals
-![Demo Link](http://youtube.com)
-
-
----
-## License
-
+<div align="center">  
+  Home Page
+<!-- ![Home Page Image](/public/images/homepage.png) -->
 
 ---
-## Contributions
+</div>
 
+## Contributors
+
+Magdalena Perry: 
+
+- [Linkedin](https://www.linkedin.com/in/magdalena-perry/)
+
+- [Github](https://github.com/magdalenaperry)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ---
-## Tests
-    
-
----
-
 ## Roadmap
-- [x] List Item
-- [x] List Item
-- [ ] List Item
-- [ ] List Item
-- [ ] List Item
-    - [ ] Chinese
-    - [ ] Spanish
+- [x] Create server.js and connection.js
+- [x] 
 
+<p align="right">(<a href="#top">back to top</a>)</p>
 
+---
 ## Contact
 For any additional questions, please reach out to me through email and follow me on GitHub.
 
-Name - [Magdalena Perry LinkedIn](https:www.linkedin.com/in/magdalenaperry) - mageltron@gmail.com
+Name - [Magdalena Perry LinkedIn](https:www.linkedin.com/in/magdalenaperry)
 
 Github - [magdalenaperry](https://www.github.com/magdalenaperry)
 
 email - [mageltron@gmail.com](mageltron@gmail.com)
 
+<p align="right">(<a href="#top">back to top</a>)</p>
 
+---
 ## Acknowledgements
+
+-
+
+
 
 
 
