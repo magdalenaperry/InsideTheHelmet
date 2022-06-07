@@ -44,12 +44,16 @@ Inside the Helmet is an application currently under construction.
 ---
 
 ## Technologies
-- MYSQL
-- Sequelize
-- Bootstrap
-- Handlebars.js
-- JavaScript MVC
-- Express
+- JavaScript
+- React
+- MongoDB
+- Mongoose
+- bcrypt
+- graphqlS
+- bootstrap
+- react-icons
+- jwt-decode
+<!-- - @emailjs/browser -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -73,23 +77,11 @@ npm -v
 npm install
 ```
 
-2. Create MYSQL schema
-```
-mysql -u root
-  SOURCE db/schema.sql
-  exit
-```
-3. seed data
+2. seed data
 ```
 npm run seed 
 ```
 
-4. Create a .env file at the root of your file and add the following environment variables
-```
-  DB_NAME=NAMEOFYOURDB
-  DB_USER=root
-  DB_PASSWORD=yourdbpasswordatsetup
-```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
