@@ -9,13 +9,9 @@
 
 # InsideTheHelmet
 
-<a href="https://github.com/magdalenaperry/InsideTheHelmet">
+<!-- <a href="https://github.com/magdalenaperry/InsideTheHelmet">
     <img src="https://via.placeholder.com/200" alt="Logo" width="100%" height="100%">
-  </a>
-
-
-
-![](https://img.shields.io/badge/License-MIT-white.svg)
+  </a> -->
 
 ## Table of Contents
 1. [Description](#description)
@@ -31,11 +27,11 @@
 
 ---
 ## Description
-Los Amigos is a mobile first, responsive web application built with user interface experience in mind. 
+Inside the Helmet is an application currently under construction.
   
 #### Deployed Links:  
 
-[Los Amigos Link](https://morning-tor-09427.herokuapp.com/)
+<!-- [Los Amigos Link](https://morning-tor-09427.herokuapp.com/) -->
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -123,8 +119,17 @@ Magdalena Perry:
 
 ---
 ## Roadmap
-- [x] Create server.js and connection.js
-- [x] 
+- [x] Create server side files
+- [x] Create MONGO DB
+- [x] Create client side files
+- [ ] Progress algorithms
+- [ ] Styling  
+    - [ ] Home   
+    - [ ] Helmet Portal
+    - [ ] Sign Up
+    - [ ] Login
+    - [ ] Questionnaires
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
