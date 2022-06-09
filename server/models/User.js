@@ -1,6 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
+const Demographics = require(('./Demographics'))
 
 const userSchema = new Schema({
   username: {
@@ -31,7 +32,8 @@ const userSchema = new Schema({
   athleteType: {
     type: String, 
     required: true,
-  }
+  }, 
+  demographics:[Demographics.schema]
 });
 
 userSchema.pre('save', async function (next) {
