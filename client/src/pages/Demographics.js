@@ -49,7 +49,9 @@ const Demographics = () => {
     // question3: ''
   });
 
-  
+  const refreshPage = async () => {
+    window.location.assign("/");
+  }
 
   const [addDemographics, { loading: demoLoading, error: demoError, data: demoData }] = useMutation(ADD_DEMO);
 
@@ -70,7 +72,9 @@ const Demographics = () => {
       const { demoData } = await addDemographics({
         variables: { ...demoState },
       });
-
+      // Auth.login(demoData.addDemographics.token)
+      // console.log(Auth.login(demoData.addDemographics.token))
+      <Navigate to="/" replace />
     } catch (e) {
       console.error(e);
     }
@@ -81,11 +85,14 @@ const Demographics = () => {
     if (demoData) {
       return (
         <>
-        <Navigate to="/me" replace />
-          <p>
+
+
+        
+          {refreshPage()}    
+          {/* <p>
             Success! You may now head{' '}
             <Link to="/profile">back to the homepage.</Link>
-          </p>
+          </p> */}
         </>
 
       )
