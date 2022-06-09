@@ -9,6 +9,11 @@ export const QUERY_USERS = gql`
       phone
       age
       athleteType
+      demographics {
+        race
+        ethnicity
+        _id
+        }
     }
   }
 `;
@@ -22,6 +27,11 @@ export const QUERY_USER = gql`
       phone
       age
       athleteType
+      demographics {
+        race
+        ethnicity
+        _id
+        }
     }
   }
 `;
@@ -35,7 +45,11 @@ export const QUERY_ME = gql`
       phone
       age
       athleteType
-
+      demographics {
+        race
+        ethnicity
+        _id
+        }
     }
   }
 `;

@@ -62,6 +62,8 @@ const Profile = () => {
       </>
     );
   }
+
+
   
   const username = (user.username);
   const cappedUsername = function capUsername() {
@@ -105,6 +107,12 @@ const Profile = () => {
                   </p>
                   <p className="fs-5">
                     <strong>Age:</strong> {user.age}
+                  </p>
+                  <p className="fs-5">
+                    <strong>Race:</strong> {user.demographics && user.demographics[0].race}
+                  </p>
+                  <p className="fs-5">
+                    <strong>Ethnicity:</strong> {user.demographics && user.demographics[0].ethnicity}
                   </p>
                 </div>
               </div>

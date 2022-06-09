@@ -28,3 +28,12 @@ mutation addUser($email: String!, $username: String!, $password: String!, $athle
   }
 }
 `;
+
+export const ADD_DEMO = gql`
+mutation addDemographics($race: String, $ethnicity: String) {
+  addDemographics(race: $race, ethnicity: $ethnicity) {
+    race
+    ethnicity
+  }
+}
+`;

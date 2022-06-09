@@ -1,10 +1,10 @@
 import decode from 'jwt-decode';
 
 class AuthService {
-  getProfile() {
+  // returns email, username and _id
+  getProfile(idToken) {
     return decode(this.getToken());
   }
-
   loggedIn() {
     const token = this.getToken();
     // If there is a token and it's not expired, return `true`
@@ -34,7 +34,7 @@ class AuthService {
 
   signup(idToken) {
     localStorage.setItem('id_token', idToken);
-    window.location.assign('/hello');
+    window.location.assign('/demographics');
   }
 
   logout() {
