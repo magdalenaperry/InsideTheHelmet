@@ -1,8 +1,11 @@
 [
   {
-    "username": "test",
+    "username": "JohnnyApples",
     "email": "test@user.com",
     "password": "password12",
-    "phone": "123-456-7890"
+    "phone": "123-456-7890",
+    "age": "22",
+    "athleteType": "Professional Athlete"
+
   }
 ]

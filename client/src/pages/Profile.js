@@ -33,6 +33,8 @@ const Profile = () => {
   const user = data?.me || data?.user || {};
   // const users = usersData?.users || [];
 
+  console.log(user)
+
   if (error) console.log(error);
 
   // redirect to personal profile page if username is yours
@@ -90,13 +92,19 @@ const Profile = () => {
                 </div>
                 <div className="card-footer text-center">
                   <p className="fs-5">
-                    <strong>user:</strong> {user.username}
+                    <strong>Username:</strong> {user.username}
                   </p>
                   <p className="fs-5">
-                    <strong>email:</strong> {user.email}
+                    <strong>Email:</strong> {user.email}
                   </p>
                   <p className="fs-5 ">
-                    <a className="text-dark text-decoration-none" href={`tel+${user.phone}`}><strong> phone:</strong> {user.phone}</a>
+                    <a className="text-dark text-decoration-none" href={`tel+${user.phone}`}><strong> Phone:</strong> {user.phone}</a>
+                  </p>
+                  <p className="fs-5">
+                    <strong>Athlete Type:</strong> {user.athleteType}
+                  </p>
+                  <p className="fs-5">
+                    <strong>Age:</strong> {user.age}
                   </p>
                 </div>
               </div>

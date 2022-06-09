@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
@@ -21,11 +21,14 @@ const styles = {
 
 
 const Signup = () => {
+
   const [formState, setFormState] = useState({
     username: '',
     email: '',
     password: '',
     phone: '',
+    age: '',
+    athleteType: ''
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
@@ -46,18 +49,19 @@ const Signup = () => {
         variables: { ...formState },
       });
 
-      Auth.login(data.addUser.token);
+      Auth.signup(data.addUser.token);
     } catch (e) {
       console.error(e);
     }
   };
+
 
   const renderForm = () => {
     if (data) {
       return (
         <p>
           Success! You may now head{' '}
-          <Link to="/">back to the homepage.</Link>
+          <Link to="/profile">back to the homepage.</Link>
         </p>
       )
     }
@@ -77,7 +81,39 @@ const Signup = () => {
               onChange={handleChange} />
           </div>
 
-          {/* <!-- Username input --> */}
+          {/* <!-- Age input --> */}
+
+          <div className="form-outline mb-4">
+            <input
+              type="number"
+              className="form-control"
+              name="age"
+              placeholder='Age'
+              value = {formState.age}
+              onChange={handleChange} />
+          </div>
+
+          {/* <!-- Athlete Type input --> */}
+          <div className="form-outline mb-4">
+            <select
+              name="athleteType"
+              type="select"
+              className="form-select"
+              id="athleteType"
+              onChange={handleChange}
+              value={formState.athleteType}
+            >
+              <option value="" disabled>Athlete Level</option>
+              <option value="Professional Athlete">Professional Athlete</option>
+              <option value="Collegiate Athlete">Collegiate Athlete</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+
+
+
+          {/* <!-- Phone input --> */}
           <div className="form-outline mb-4">
             <input
               type="text"
@@ -120,16 +156,16 @@ const Signup = () => {
 
     );
   };
-  
+
   const errorAlert = () => {
     if (error) {
       return (
         <>
-        <div className="alert alert-warning alert-dismissible fade show" role="alert">
-          <strong>Uh Oh!</strong> Please make your password longer than 5 characters.
-          <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close">
-          </button>
-        </div>
+          <div className="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Uh Oh!</strong> Please make your password longer than 5 characters.
+            <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close">
+            </button>
+          </div>
         </>
       )
     }
@@ -138,19 +174,19 @@ const Signup = () => {
   return (
     <>
       <main style={styles.main}>
-        <div className="text-center"style={styles.container}>
+        <div className="text-center" style={styles.container}>
           {/* <img src={Logo} alt="Vita Amet" style={styles.logo} className="mb-5" /> */}
           <h1 className='text-center text-uppercase titles'>sign up</h1>
 
           <div className='container'>
             <div className='row justify-content-center'>
-              <div className='col-6'>
+              <div className='col-6 '>
                 <div className="tab-content">
                   {errorAlert()}
 
                   {renderForm()}
-                  
-                  
+
+
                 </div>
               </div>
             </div>

@@ -6,6 +6,9 @@ export const QUERY_USERS = gql`
       _id
       username
       email
+      phone
+      age
+      athleteType
     }
   }
 `;
@@ -17,6 +20,8 @@ export const QUERY_USER = gql`
       username
       email
       phone
+      age
+      athleteType
     }
   }
 `;
@@ -26,8 +31,11 @@ export const QUERY_ME = gql`
     me {
       _id
       username
-      emailS
+      email
       phone
+      age
+      athleteType
+
     }
   }
 `;
