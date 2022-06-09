@@ -42,19 +42,25 @@ const Demographics = () => {
   if (userLoading) console.log(userLoading);
 
 
+
+// ===========================================
+
 // set states for demographics questions
   const [demoState, setDemoState] = useState({
     race: '',
     ethnicity: '',
     // question3: ''
+    // 
   });
 
-  const refreshPage = async () => {
+// naviagtes to home to populate updated db
+  const sendHomepage = async () => {
     window.location.assign("/");
   }
 
   const [addDemographics, { loading: demoLoading, error: demoError, data: demoData }] = useMutation(ADD_DEMO);
 
+  // onChange in form, links to state
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -72,8 +78,13 @@ const Demographics = () => {
       const { demoData } = await addDemographics({
         variables: { ...demoState },
       });
-      // Auth.login(demoData.addDemographics.token)
-      // console.log(Auth.login(demoData.addDemographics.token))
+
+      // check to see if you can add multiple variables from different mutations here:
+      // const { questionData } = await addQuestions({
+      //   variables: { ...questionState },
+      // });
+
+// sends home after you click submit 
       <Navigate to="/" replace />
     } catch (e) {
       console.error(e);
@@ -82,19 +93,12 @@ const Demographics = () => {
 
   const renderForm = () => {
 
+// if data has already been submitted for demographics:
     if (demoData) {
       return (
         <>
-
-
-        
-          {refreshPage()}    
-          {/* <p>
-            Success! You may now head{' '}
-            <Link to="/profile">back to the homepage.</Link>
-          </p> */}
+          {sendHomepage()}    
         </>
-
       )
     }
 
@@ -164,11 +168,6 @@ const Demographics = () => {
         </>
       )
     }
-
-
-
-
-
 
   }
   return (
