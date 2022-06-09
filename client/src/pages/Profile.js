@@ -84,36 +84,48 @@ const Profile = () => {
             <div className="col-md-4">
               <div className="card">
                 <h2 className="card-header">Hi {cappedUsername()},</h2>
-                <div className="card-body">
-                  {/* <img
+                {/* <div className="card-body">
+                  <img
                     className="rounded-circle img-fluid"
                     src={Avatar}
                     alt="avatar"
                     style={styles.profile}
-                  /> */}
-                </div>
-                <div className="card-footer text-center">
-                  <p className="fs-5">
+                  />
+                </div> */}
+                <div className="card-footer text-start pt-3 mt-0">
+                  <p className="">
                     <strong>Username:</strong> {user.username}
                   </p>
-                  <p className="fs-5">
+                  <p className="">
                     <strong>Email:</strong> {user.email}
                   </p>
-                  <p className="fs-5 ">
+                  <p className="">
                     <a className="text-dark text-decoration-none" href={`tel+${user.phone}`}><strong> Phone:</strong> {user.phone}</a>
                   </p>
-                  <p className="fs-5">
+                  <p className="">
                     <strong>Athlete Type:</strong> {user.athleteType}
                   </p>
-                  <p className="fs-5">
+                  <p className="">
                     <strong>Age:</strong> {user.age}
                   </p>
-                  <p className="fs-5">
-                    <strong>Race:</strong> {user.demographics && user.demographics[0].race}
+                  <p className="">
+                    {user.demographics && user.demographics.map((demographic) => (
+                      <>
+                        <strong>Race:</strong> {demographic.race}
+                      </>
+                    ) )}
                   </p>
-                  <p className="fs-5">
+                  <p className="">
+                    {user.demographics && user.demographics.map((demographic) => (
+                      <>
+                        <strong>Ethnicity:</strong> {demographic.ethnicity}
+                      </>
+                    ))}
+                  </p>
+
+                  {/* <p className="">
                     <strong>Ethnicity:</strong> {user.demographics && user.demographics[0].ethnicity}
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
