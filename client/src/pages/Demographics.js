@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 
-import Logo from "../../assets/logo192.png";
+import Logo from "../assets/logo192.png";
 import { useMutation, useQuery } from '@apollo/client';
 import { ADD_DEMO } from '../utils/mutations';
 import {
