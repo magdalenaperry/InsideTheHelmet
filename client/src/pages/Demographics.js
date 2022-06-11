@@ -161,7 +161,7 @@ const Demographics = () => {
             </div>
 
             <div className='text-center'>
-              <button type="submit" className="btn btn-success btn-block mb-4">Submit</button>
+              <button type="submit" className="button btn-success btn-block mb-4">Submit</button>
             </div>
 
           </form>

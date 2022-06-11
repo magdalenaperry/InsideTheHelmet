@@ -1,10 +1,7 @@
 :root {
-  --lightgreen: #606c38;
-  --darkgreen: #283618;
-  --cream: #fefae0;
-  --lightorange: #dda15e;
-  --darkorange: #bc6c25;
-  --green: #0b3008;
+  --nav-color: #cedada;
+  --bg-color: 5px 42px;
+  --mint: #CFF6E3; 
 }
 
 html,
@@ -14,18 +11,13 @@ html,
   box-sizing: border-box;
 }
 
-h5 {
-  letter-spacing: 10px;
-}
-
-.titles {
-  letter-spacing: 10px;
-  font-variant: small-caps;
-  font-weight: 200;
-}
-
+/* semantic stylings */
 header {
   margin-top: 150px;
+}
+
+nav{
+  background-color: var(--nav-color);
 }
 
 main {
@@ -34,15 +26,56 @@ main {
   min-height: 65vh;
 }
 
+
+/* Button stylings */
+.button{
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: red;
+    color: #212529;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color:var(--mint);
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-green {
+  /* background-color: ; */
+}
+
+.button:hover {
+
+}
+.button:active{
+
+}
+
+/* text styling */
+h5 {
+  letter-spacing: 10px;
+}
+
 .navBrand {
   letter-spacing: 10px;
   text-transform: uppercase;
 }
 
-.btn-green {
-  background-color: var(--green);
+.titles {
+  letter-spacing: 10px;
+  font-variant: small-caps;
+  font-weight: 200;
 }
-
 
 /*======================
     404 page

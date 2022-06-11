@@ -22,7 +22,7 @@ const Home = () => {
         <div className="container-fluid">
           
                 <Link to="/Location">
-                  <button type="button" className="btn btn-warning mb-5 px-4 py-2 my-2 fs-5">
+                  <button type="button" className="button btn-warning mb-5 px-4 py-2 my-2 fs-5">
                     Button Template
                   </button>
                 </Link>

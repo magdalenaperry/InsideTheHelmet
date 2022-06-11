@@ -16,15 +16,15 @@ function Navbar() {
       <>
 
         {/* <!-- Navbar --> */}
-        <nav className="navbar navbar-expand-lg bg-light navbar-light fixed-top py-5">
+        <nav className="navbar navbar-expand-lg navbar-light fixed-top py-5">
           {/* <!-- Container wrapper --> */}
           <div className="container-fluid">
             {/* <!-- Navbar brand --> */}
 
             <Link className="navbar-brand logo" to="/">
-              {/* <img src={Logo} alt="logo" height="20px" /> */}
+              <img src={Logo} alt="logo" height="40px" />
 
-              <span className="navBrand ms-3 fs-5">Inside the Helmet</span>
+              <span className="navBrand ms-3 fs-5">inside the helmet</span>
             </Link>
 
             {/* <!-- Toggle button --> */}

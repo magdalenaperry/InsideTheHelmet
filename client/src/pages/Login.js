@@ -53,7 +53,7 @@ const Login = () => {
     if (error) {
       return (
         <>
-         
+
           <div className="alert alert-warning alert-dismissible fade show" role="alert">
             <strong>Uh Oh!</strong> Please check your credentials and try again.
             <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close">
@@ -69,7 +69,7 @@ const Login = () => {
       return (
         <main>
           <div className='container text-center'>
-          <SpinnerDotted/>
+            <SpinnerDotted />
           </div>
 
         </main>
@@ -104,7 +104,7 @@ const Login = () => {
 
           {/* <!-- Submit button --> */}
           <div className='text-center'>
-            <button type="submit" className="btn btn-success btn-block mb-4">Sign in</button>
+            <button type="submit" className="button btn-success btn-block mb-4">Sign in</button>
 
             {/* <!-- Register buttons --> */}
             <p>Not a member? <Link
@@ -121,14 +121,16 @@ const Login = () => {
 
   return (
     <>
-      <main>
-        <div className='text-center'>
-          <img src={Logo} alt="Vita Amet" style={styles.logo} className="mb-5" />
-          <h1 className='text-center text-uppercase titles'>login</h1>
+
+
+      <main className='container'>
+        <div className='text-center shadow p-3 mb-5 bg-white rounded my-5' >
+          <img src={Logo} alt="Vita Amet" style={styles.logo} className="my-5" />
+          <h2 className='text-center text-uppercase titles mb-5'>login</h2>
 
           <div className='container'>
             <div className='row justify-content-center'>
-              <div className='col-6'>
+              <div className='col-10'>
                 <div className="tab-content text-center">
                   {errorAlert()}
 

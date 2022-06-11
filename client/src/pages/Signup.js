@@ -5,7 +5,7 @@ import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
-// import Logo from "../assets/logo192.png";
+import Logo from "../assets/logo192.png";
 
 
 const styles = {
@@ -147,7 +147,15 @@ const Signup = () => {
 
           {/* <!-- Submit button --> */}
           <div className='text-center'>
-            <button type="submit" className="btn btn-success btn-block mb-4">Sign Up</button>
+            <button type="submit" className="button btn-block mb-4">Sign Up</button>
+
+            <p>Already a member? <Link
+              className='text-decoration-none fw-bold text-success'
+              to="/Login">
+             Login </Link>
+              instead!
+            </p>
+
           </div>
 
         </form>
@@ -173,15 +181,15 @@ const Signup = () => {
 
   return (
     <>
-      <main style={styles.main}>
-        <div className="text-center" style={styles.container}>
-          {/* <img src={Logo} alt="Vita Amet" style={styles.logo} className="mb-5" /> */}
-          <h1 className='text-center text-uppercase titles'>sign up</h1>
+      <main className="container">
+        <div className="text-center shadow p-3 mb-5 bg-white rounded my-5">
+          <img src={Logo} alt="Vita Amet" style={styles.logo} className="my-5" />
+          <h2 className='text-center text-uppercase titles mb-5'>sign up</h2>
 
           <div className='container'>
             <div className='row justify-content-center'>
-              <div className='col-6 '>
-                <div className="tab-content">
+              <div className='col-10'>
+                <div className="tab-content text-center">
                   {errorAlert()}
 
                   {renderForm()}
