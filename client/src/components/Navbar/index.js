@@ -16,7 +16,7 @@ function Navbar() {
       <>
 
         {/* <!-- Navbar --> */}
-        <nav className="navbar navbar-expand-lg navbar-light fixed-top py-5">
+        <nav className="navbar navbar-expand-lg navbar-light py-5">
           {/* <!-- Container wrapper --> */}
           <div className="container-fluid">
             {/* <!-- Navbar brand --> */}
@@ -24,7 +24,7 @@ function Navbar() {
             <Link className="navbar-brand logo" to="/">
               <img src={Logo} alt="logo" height="40px" />
 
-              <span className="navBrand ms-3 fs-5">inside the helmet</span>
+              <span className="navBrand fs-5-lg ms-3">inside the helmet</span>
             </Link>
 
             {/* <!-- Toggle button --> */}
