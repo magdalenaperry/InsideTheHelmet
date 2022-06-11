@@ -125,7 +125,7 @@ const Login = () => {
 
       <main className='container'>
         <div className='text-center shadow p-3 mb-5 bg-white rounded my-5' >
-          <img src={Logo} alt="Vita Amet" style={styles.logo} className="my-5" />
+          <img src={Logo} alt="Inside the Helmet" style={styles.logo} className="my-5" />
           <h2 className='text-center text-uppercase titles mb-5'>login</h2>
 
           <div className='container'>

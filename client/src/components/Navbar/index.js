@@ -24,14 +24,14 @@ function Navbar() {
             <Link className="navbar-brand logo" to="/">
               <img className="ms-2" src={Logo} alt="logo" height="45px" />
 
-              <span className="navBrand fs-5-lg ms-3">inside the helmet</span>
+              <span className="navBrand ms-3">inside the helmet</span>
             </Link>
 
             {/* <!-- Toggle button --> */}
-            <button className="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+            <button className="navbar-toggler me-2 hamburger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
           aria-expanded="false" 
           aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon hb-icon"></span>
           </button>
 
             {/* <!-- Collapsible wrapper --> */}
