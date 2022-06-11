@@ -22,7 +22,7 @@ function Navbar() {
             {/* <!-- Navbar brand --> */}
 
             <Link className="navbar-brand logo" to="/">
-              <img className="ms-2" src={Logo} alt="logo" height="70px" />
+              <img className="ms-2" src={Logo} alt="logo" height="45px" />
 
               <span className="navBrand fs-5-lg ms-3">inside the helmet</span>
             </Link>
