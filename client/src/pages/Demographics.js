@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 
-import Logo from "../../assets/logo192.png";
+// import Logo from "../../assets/logo192.png";
 import { useMutation, useQuery } from '@apollo/client';
 import { ADD_DEMO } from '../utils/mutations';
 import {
@@ -175,7 +175,7 @@ const Demographics = () => {
     <>
       <main style={styles.main}>
         <div className="text-center" style={styles.container}>
-          <img src={Logo} alt="Inside The Helmet" style={styles.logo} className="mb-5" />
+          {/* <img src={Logo} alt="Inside The Helmet" style={styles.logo} className="mb-5" /> */}
 
           <div className='container'>
             <div className='row justify-content-center'>
