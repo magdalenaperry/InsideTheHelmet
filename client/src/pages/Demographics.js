@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+
 import { Link, Navigate, useParams } from 'react-router-dom';
 
-// import Logo from "../../assets/logo192.png";
+import Logo from "../assets/logo192.png";
+
 import { useMutation, useQuery } from '@apollo/client';
 import { ADD_DEMO } from '../utils/mutations';
 import {
@@ -26,27 +28,27 @@ const styles = {
 }
 
 const Demographics = () => {
-// gets id for current user
+  // gets id for current user
   const { id } = useParams();
 
-// gets current user data
+  // gets current user data
   const { loading: userLoading, data: userData, error: userError } = useQuery(id ? QUERY_USER : QUERY_ME, {
     variables: { id },
   });
 
-// if userData avaialable, find 'me', or 'user' or return empty
+  // if userData avaialable, find 'me', or 'user' or return empty
   const user = userData?.me || userData?.user || {};
   console.log(user);
 
-// show error
+  // show error
   if (userError) console.log(userError);
   if (userLoading) console.log(userLoading);
 
 
 
-// ===========================================
+  // ===========================================
 
-// set states for demographics questions
+  // set states for demographics questions
   const [demoState, setDemoState] = useState({
     race: '',
     ethnicity: '',
@@ -54,7 +56,7 @@ const Demographics = () => {
     // 
   });
 
-// naviagtes to home to populate updated db
+  // naviagtes to home to populate updated db
   const sendHomepage = async () => {
     window.location.assign("/");
   }
@@ -85,7 +87,7 @@ const Demographics = () => {
       //   variables: { ...questionState },
       // });
 
-// sends home after you click submit 
+      // sends home after you click submit 
       <Navigate to="/" replace />
     } catch (e) {
       console.error(e);
@@ -94,11 +96,11 @@ const Demographics = () => {
 
   const renderForm = () => {
 
-// if data has already been submitted for demographics:
+    // if data has already been submitted for demographics:
     if (demoData) {
       return (
         <>
-          {sendHomepage()}    
+          {sendHomepage()}
         </>
       )
     }
@@ -107,7 +109,6 @@ const Demographics = () => {
       return (
         <>
           <form onSubmit={handleFormSubmit}>
-{/* 
             <div className="form-outline mb-4">
               <input
                 type="text"
@@ -116,11 +117,9 @@ const Demographics = () => {
                 placeholder='question 1'
                 value={demoState.name}
                 onChange={handleChange} />
-            </div> */}
+            </div>
 
-            {/* <!-- Age input --> */}
-
-            {/* <div className="form-outline mb-4">
+            <div className="form-outline mb-4">
               <input
                 type="number"
                 className="form-control"
@@ -128,7 +127,7 @@ const Demographics = () => {
                 placeholder='Age'
                 value={demoState.age}
                 onChange={handleChange} />
-            </div> */}
+            </div>
 
             <div className="form-outline mb-4">
               <select
@@ -175,7 +174,7 @@ const Demographics = () => {
     <>
       <main style={styles.main}>
         <div className="text-center" style={styles.container}>
-          {/* <img src={Logo} alt="Inside The Helmet" style={styles.logo} className="mb-5" /> */}
+          <img src={Logo} alt="Inside The Helmet" style={styles.logo} className="mb-5" />
 
           <div className='container'>
             <div className='row justify-content-center'>
@@ -184,6 +183,8 @@ const Demographics = () => {
                   {/* {errorAlert()} */}
 
                   {renderForm()}
+
+
 
 
                 </div>

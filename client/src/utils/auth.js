@@ -34,7 +34,7 @@ class AuthService {
 
   signup(idToken) {
     localStorage.setItem('id_token', idToken);
-    window.location.assign('/demographics');
+    window.location.assign('/questionnaires');
   }
 
   logout() {

@@ -1,0 +1,291 @@
+<div className="multisteps-form">
+  {/*
+  <!--progress bar--> */}
+  <div className="row pt-1">
+    <div className="col-12 col-lg-8 m-auto mb-4">
+      <div className="multisteps-form__progress">
+
+        <button className="multisteps-form__progress-btn js-active" type="button" title="Login">Sign Up</button>
+
+        <button className="multisteps-form__progress-btn" type="button" title="Address">Profile</button>
+
+        <button className="multisteps-form__progress-btn" type="button" title="Order Info">Medical
+          History</button>
+
+        <button className="multisteps-form__progress-btn" type="button" title="Comments">Lifestyle</button>
+
+      </div>
+    </div>
+  </div>
+
+  {/*
+  <!--form panels--> */}
+  <div className="row">
+    <div className="col-12 col-lg-8 m-auto">
+      <form onSubmit={handleFormSubmit} className="signup-form multisteps-form__form">
+
+        {/*
+        <!--single form panel--> */}
+        <div className="multisteps-form__panel shadow p-4 rounded bg-white js-active" data-animation="scaleIn">
+          <h3 className="multisteps-form__title text-center mb-5">Sign Up</h3>
+          <div className="multisteps-form__content">
+
+            <div className="form-outline mb-4">
+              <input id="first_name-signup" className="multisteps-form__input form-control" type="text"
+                placeholder="First Name" name="" />
+            </div>
+            <div className="form-outline mb-4">
+              <input id="last_name-signup" className="multisteps-form__input form-control" type="text"
+                placeholder="Last Name" name="" />
+            </div>
+
+            <div className="form-outline mb-4">
+              <input id="username-signup" className="multisteps-form__input form-control" type="text"
+                placeholder="Username" name="" />
+            </div>
+            <div className="form-outline mb-4">
+              <input id="email-signup" className="multisteps-form__input form-control" type="email" placeholder="Email"
+                name="" // value={} // onChange={} />
+            </div>
+            <div className="form-outline mb-4">
+              <input id="password-signup" className="multisteps-form__input form-control" type="password"
+                placeholder="Password" />
+            </div>
+
+            <div className="justify-content-center text-center mt-4">
+              <button className="btn btn-secondary px-3 ml-auto js-btn-next" type="button" title="Next">Next</button>
+            </div>
+          </div>
+        </div>
+
+        {/*
+        <!--single form panel--> */}
+        <div className="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
+          <h3 className="multisteps-form__title text-center mb-5">Profile</h3>
+          <div className="multisteps-form__content">
+            <h5 className="">Patient Information:</h5>
+
+
+            {/*
+            <!-- race/sex height/weight --> */}
+            <div className="row mt-4">
+              <div className="col-4">
+                <input id="race-signup" className="multisteps-form__input form-control" type="text"
+                  placeholder="Race" />
+              </div>
+
+              <div className="col-4">
+                <input id="age-signup" className="multisteps-form__input form-control" type="text" placeholder="Age" />
+              </div>
+
+              <div className="col-4">
+                <input id="sex-signup" className="multisteps-form__input form-control" type="text" placeholder="Sex" />
+              </div>
+            </div>
+
+            <div className="row mt-4">
+              <div className="col-6 col-sm-6">
+                <input id="height-signup" className="multisteps-form__input form-control" type="text"
+                  placeholder="Height" />
+              </div>
+
+              <div className="col-6 col-sm-6 mb-4">
+                <input id="weight-signup" className="multisteps-form__input form-control" type="text"
+                  placeholder="Weight" />
+              </div>
+            </div>
+
+            <div className="col-12 mb-3">
+              <input id="insurance_name-signup" className="multisteps-form__input form-control" type="text"
+                placeholder="Insurance Provider" />
+            </div>
+
+            <h5 className="">Contact:</h5>
+
+            <div className="col mb-4">
+              <input id="phone-signup" className="multisteps-form__input form-control" type="text"
+                placeholder="(123) 867-5309" />
+            </div>
+
+            <div className="row">
+
+              <div className="col">
+                <input id="street_address-signup" className="multisteps-form__input form-control" type="text"
+                  placeholder="Street Address" />
+              </div>
+
+            </div>
+
+            {/*
+            <!-- city/state/zip --> */}
+            <div className="row mt-4">
+              <div className="col-12 col-sm-6">
+                <input id="city-signup" className="multisteps-form__input form-control" type="text"
+                  placeholder="City" />
+              </div>
+
+              <div className="col-6 col-sm-3 mt-4 mt-sm-0">
+                <input id="state-signup" className="multisteps-form__input form-control" type="text"
+                  placeholder="State" />
+              </div>
+
+              <div className="col-6 col-sm-3 mt-4 mt-sm-0">
+                <input id="zipcode-signup" className="multisteps-form__input form-control" type="text"
+                  placeholder="Zip" />
+              </div>
+            </div>
+
+            {/*
+            <!-- buttons --> */}
+            <div className="justify-content-center text-center mt-4">
+              <button className="btn btn-secondary px-3 js-btn-prev" type="button" title="Back">Back</button>
+              <button className="btn btn-secondary px-3 ml-auto js-btn-next" type="button" title="Next">Next</button>
+            </div>
+          </div>
+        </div>
+
+
+        {/*
+        <!--single form panel--> */}
+        <div className="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
+          <h3 className="multisteps-form__title mb-5 text-center">Medical History</h3>
+          <div className="multisteps-form__content">
+            <div className="row">
+
+              <h5>Do you have a family history of any of the following?</h5>
+              {/*
+              <!-- checkboxes for patient history --> */}
+              <div className="col-md-4">
+                <br />
+                <div className="checkbox">
+                  <label htmlFor="family_history-0">
+                    <input type="checkbox" name="asthma" className="history-form" id="asthma-signup" value="Asthma" />
+                    Asthma
+                  </label>
+                </div>
+                <div className="checkbox">
+                  <label htmlFor="family_history-1">
+                    <input type="checkbox" name="cancer" className="history-form" id="cancer" value="Cancer" />
+                    Cancer
+                  </label>
+                </div>
+                <div className="checkbox">
+                  <label htmlFor="family_history-2">
+                    <input type="checkbox" name="cardiac_disease" className="history-form" id="cardiac-disease"
+                      value="Cardiac Disease" />
+                    Cardiac disease
+                  </label>
+                </div>
+                <div className="checkbox">
+                  <label htmlFor="family_history-3">
+                    <input type="checkbox" name="diabetes" className="history-form" id="diabetes" value="Diabetes" />
+                    Diabetes
+
+                  </label>
+                </div>
+                <div className="checkbox">
+                  <label htmlFor="family_history-4">
+                    <input type="checkbox" name="hypertension" className="history-form" id="hypertension"
+                      value="Hypertension" />
+                    Hypertension
+
+                  </label>
+                </div>
+                <div className="checkbox">
+                  <label htmlFor="family_history-5">
+                    <input type="checkbox" name="psychiatric" className="history-form" id="psychiatric"
+                      value="Psychiatric Disorder" />
+                    Psychiatric disorder
+                  </label>
+                </div>
+                <div className="checkbox">
+                  <label htmlFor="family_history-6">
+                    <input type="checkbox" name="epilepsy" className="history-form" id="epilepsy" value="Epilepsy" />
+                    Epilepsy
+                  </label>
+                </div>
+              </div>
+
+            </div>
+            <div className="row">
+              <div className="justify-content-center text-center mt-4">
+                <button className="btn btn-secondary px-3 js-btn-prev" type="button" title="Back">Back</button>
+                <button className="btn btn-secondary px-3 ml-auto js-btn-next" type="button" title="Next">Next</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/*
+        <!--single form panel--> */}
+        <div className="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
+          <h3 className="multisteps-form__title text-center mb-5">Lifestyle & Substances</h3>
+          <div className="multisteps-form__content">
+
+            <h5>How often do you consume alcohol?</h5>
+            <div className="mb-3">
+              <div className="radio">
+                <label htmlFor="family_history-1">
+                  <input type="radio" name="alcohol" className="alcohol-form" value="never" />
+                  never
+                </label>
+              </div>
+              <div className="radio">
+                <label htmlFor="family_history-1">
+                  <input type="radio" name="alcohol" className="alcohol-form" value="monthly or less" />
+                  once a month or less
+                </label>
+              </div>
+              <div className="radio">
+                <label htmlFor="family_history-1">
+                  <input type="radio" name="alcohol" className="alcohol-form" value="1-2 times per week" />
+                  one to two times per week
+                </label>
+              </div>
+              <div className="radio">
+                <label htmlFor="family_history-1">
+                  <input type="radio" name="alcohol" className="alcohol-form" value="3-4 times per week" />
+                  three to four times per week
+                </label>
+              </div>
+              <div className="radio">
+                <label htmlFor="family_history-1">
+                  <input type="radio" name="alcohol" className="alcohol-form" value="daily" />
+                  daily
+                </label>
+              </div>
+            </div>
+
+
+            {/*
+            <!-- checkboxes for patient history --> */}
+            <h5>Do you use any of the following recreational drugs?</h5>
+            <div className="col-md-4">
+              <div className="checkbox">
+                <label htmlFor="family_history-0">
+                  <input type="checkbox" name="asthma" className="drug-form" value="Inhalants" />
+                  Inhalants
+                </label>
+              </div>
+              <div className="checkbox">
+                <label htmlFor="family_history-1">
+                  <input type="checkbox" name="cancer" className="drug-form"
+                    value="Stimulants (cocaine, crack, amphetamine, speed, crank)" />
+                  Stimulants
+                </label>
+              </div>
+
+
+
+            </div>
+
+            <div className="justify-content-center text-center mt-4">
+              <button className="btn btn-secondary px-3 js-btn-prev" type="button" title="Back">Back</button>
+              <button className="btn btn-warning px-3 ml-auto" type="submit" title="Send">Submit</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
