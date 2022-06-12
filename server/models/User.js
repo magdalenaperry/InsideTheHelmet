@@ -2,6 +2,7 @@ const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
 const Demographics = require(('./Demographics'))
+const Dass = require('./Dass')
 
 const userSchema = new Schema({
   username: {
@@ -33,7 +34,8 @@ const userSchema = new Schema({
     type: String, 
     required: true,
   }, 
-  demographics:[Demographics.schema]
+  demographics:[Demographics.schema], 
+  dass:[Dass.schema],
 });
 
 userSchema.pre('save', async function (next) {

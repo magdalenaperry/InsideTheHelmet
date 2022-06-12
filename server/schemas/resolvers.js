@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Demographics } = require("../models");
+const { User, Demographics, Dass } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -45,9 +45,26 @@ const resolvers = {
           { new: true }
         )
           .populate("demographics")
-          // .populate({ path: "orders", populate: "items" });
 
         return user.demographics.id(demographics._id);
+      }
+
+      throw new AuthenticationError("Not logged in");
+    },
+
+    addDass: async (parent, args, context) => {
+      console.log(context);
+      if (context.user) {
+        const dass = new Dass(args);
+
+        const user = await User.findByIdAndUpdate(
+          context.user._id,
+          { $push: { dass: dass } },
+          { new: true }
+        )
+          .populate("dass")
+
+        return user.dass.id(dass._id);
       }
 
       throw new AuthenticationError("Not logged in");
