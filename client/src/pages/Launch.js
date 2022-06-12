@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const About = () => {
+const Launch = () => {
 
 
   return (
@@ -11,10 +11,12 @@ const About = () => {
           <div className="row mx-5 mt-5">
             <div className="col-12 text-center">
               {/* <img className="img-fluid" src='http://via.placeholder.com/200' alt='adventure'></img> */}
-              <h1 className='py-3 titles'>about</h1>
+              <h1 className='py-3 titles'>Launch</h1>
               <p className='row mx-5 mb-5 text-center'>
-                Info here
+                Render information here, college or professional athletes?
+                
               </p>
+              
             </div>
           </div>
         </div>
@@ -27,4 +29,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Launch;

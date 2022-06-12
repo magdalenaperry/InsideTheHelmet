@@ -77,43 +77,48 @@ const Profile = () => {
       <>
 
 
-        <div className="container-fluid">
+          <h1 className="titles mt-5">Helmet Dashboard</h1>
           <div className="row">
-            <div className="col-md-4">
-            </div>
-            <div className="col-md-4">
-              <div className="card">
-                <h2 className="card-header">Hi {cappedUsername()},</h2>
-                {/* <div className="card-body">
+            <div className="col-md-4 mb-5">
+              
+              <div className="card shadow rounded bg-white mt-5 pt-5" style={{ height: "400" }}>
+                {/* <h2 className="card-header">Hi {cappedUsername()},</h2> */}
+                <div className="px-5">
                   <img
-                    className="rounded-circle img-fluid"
-                    src={Avatar}
+                    className="img-fluid"
+                    src="https://via.placeholder.com/400"
+                    stle={{width: "100%"}}
                     alt="avatar"
-                    style={styles.profile}
+                    // style={styles.profile}
                   />
-                </div> */}
-                <div className="card-footer text-start pt-3 mt-0">
+                </div>
+                <div className="px-5 py-5 pt-3 mt-0">
                   <p className="">
-                    <strong>Username:</strong> {user.username}
+                    {/* <strong>Username:</strong>  */}
+                    {cappedUsername()}, {user.age}
                   </p>
                   <p className="">
-                    <strong>Email:</strong> {user.email}
+                    {/* <strong>Athlete Type:</strong>  */}
+                    {user.athleteType}
                   </p>
                   <p className="">
-                    <a className="text-dark text-decoration-none" href={`tel+${user.phone}`}><strong> Phone:</strong> {user.phone}</a>
+                      {/* // <strong> Phone:</strong>  */}
+                      {user.phone}
                   </p>
                   <p className="">
-                    <strong>Athlete Type:</strong> {user.athleteType}
+                    {/* <strong>Email:</strong>  */}
+                    {user.email}
                   </p>
-                  <p className="">
-                    <strong>Age:</strong> {user.age}
-                  </p>
-                  <p className="">
+                  {/* <p className=""> */}
+                    {/* <strong>Age:</strong>  */}
+                    {/* {user.age} */}
+                  {/* </p> */}
+                  {/* <p className="">
                     {user.demographics && user.demographics.map((demographic) => (
                       <>
                         <strong>Race:</strong> {demographic.race}
                       </>
-                    ) )}
+                    ))}
                   </p>
                   <p className="">
                     {user.demographics && user.demographics.map((demographic) => (
@@ -121,18 +126,24 @@ const Profile = () => {
                         <strong>Ethnicity:</strong> {demographic.ethnicity}
                       </>
                     ))}
-                  </p>
+                  </p> */}
 
                   {/* <p className="">
                     <strong>Ethnicity:</strong> {user.demographics && user.demographics[0].ethnicity}
                   </p> */}
                 </div>
               </div>
+
             </div>
-            <div className="col-md-4">
+          <div className="col-md-8">
+              <div className="card shadow rounded bg-white mt-5 pt-5" style={{height:400}}>
+ 
+                </div>
             </div>
           </div>
-        </div>
+        <div className="card shadow col-12 rounded bg-white mb-5" style={{ height: "400" }}>
+            <p className="my-5">Section Here</p>
+          </div>
       </>
     );
   };
@@ -142,6 +153,7 @@ const Profile = () => {
       <main className="text-center">
         <div className="container">
           {renderCurrentUserInfo()}
+          
         </div>
 
       </main>

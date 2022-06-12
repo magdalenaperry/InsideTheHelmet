@@ -3,8 +3,8 @@ import React from "react";
 const NotFound = () => {
   return (
     <main className="text-center">
-      <div >
-        <h1 className="text-center display-2">404</h1>
+      <div classname="">
+        <h1 className="text-center display-2 mt-5 titles">404</h1>
         <h2 className="my-5 text-success display-3">Uh oh, looks like you're lost!</h2>
         {/* <h2 className="h2">...this page is unavailable</h2> */}
 

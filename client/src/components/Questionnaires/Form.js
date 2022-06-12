@@ -23,7 +23,7 @@ import Dass from './Dass'
 
 
 const Form = () => {
-// =================Verification=========================
+  // =================Verification=========================
   // gets id for current user
   const { id } = useParams();
 
@@ -43,7 +43,7 @@ const Form = () => {
 
 
 
-// ==============Data UseStates=======================
+  // ==============Data UseStates=======================
   const [dassData, setDassData] = useState({
   })
 
@@ -58,24 +58,24 @@ const Form = () => {
   // ==============Mutations===========================
   const [addDemographics, { loading: demoLoading, error: demoError, data: demographicStateData }] = useMutation(ADD_DEMO);
 
-  const [addDass, {loading: dassLoading, error: dassError, data: dassStateData }] = useMutation(ADD_DASS);
+  const [addDass, { loading: dassLoading, error: dassError, data: dassStateData }] = useMutation(ADD_DASS);
 
-// =================Pagination===========================
+  // =================Pagination===========================
   const [page, setPage] = useState(0);
 
   const FormTitles = ["Demographics", "titlename2", "titlename3", "titlename4",]
-  
+
   const PageDisplay = () => {
-    switch(page) {
-      case 0 : 
-        return <Demographics demoData={demoData} setDemoData={setDemoData}/>;
-      case 1 : 
-        return <Relationships formData={formData} setFormData={setFormData}/>
-      case 2 : 
-        return <SportInjury formData={formData} setFormData={setFormData}/>
+    switch (page) {
+      case 0:
+        return <Demographics demoData={demoData} setDemoData={setDemoData} />;
+      case 1:
+        return <Relationships formData={formData} setFormData={setFormData} />
+      case 2:
+        return <SportInjury formData={formData} setFormData={setFormData} />
       case 3:
-        return <Dass dassData={dassData} setDassData={setDassData}/>
-      default : 
+        return <Dass dassData={dassData} setDassData={setDassData} />
+      default:
         console.log('all done')
     }
   }
@@ -93,11 +93,11 @@ const Form = () => {
         variables: { ...demoData },
       });
       const { dassStateData } = await addDass({
-        variables: { ...dassData}
+        variables: { ...dassData }
       });
 
       // sends home after you click submit
-      sendHomepage(); 
+      sendHomepage();
     } catch (e) {
       console.error(e);
     }
@@ -121,16 +121,16 @@ const Form = () => {
             <h3 className='text-center text-uppercase titles'>{FormTitles[page]}</h3>
           </div>
           <div className='body'>
-            <form 
+            <form
             // onSubmit={handleFormSubmit}
             >
-            {PageDisplay()}
+              {PageDisplay()}
 
             </form>
           </div>
           <div className='footer'>
             <button
-            className='button'
+              className='button'
               disabled={page === 0}
               onClick={() => {
                 setPage((currPage) => currPage - 1);
@@ -142,7 +142,7 @@ const Form = () => {
             <button
               className='button'
               onClick={(event) => {
-                if (page === FormTitles.length - 1){
+                if (page === FormTitles.length - 1) {
                   handleFormSubmit(event);
                   console.log(dassData, demoData);
 
@@ -150,8 +150,8 @@ const Form = () => {
                   setPage((currPage) => currPage + 1);
                 }
               }}>
-                {page === FormTitles.length - 1 ? "Submit" : "Next"}
-                </button>
+              {page === FormTitles.length - 1 ? "Submit" : "Next"}
+            </button>
 
           </div>
         </>
