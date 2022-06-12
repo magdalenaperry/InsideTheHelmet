@@ -9,6 +9,29 @@ export const QUERY_USERS = gql`
       phone
       age
       athleteType
+      dass {
+        dass1
+        dass2
+        dass3
+        dass4
+        dass5
+        dass6
+        dass7
+        dass8
+        dass9
+        dass10
+        dass11
+        dass12
+        dass13
+        dass14
+        dass15
+        dass16
+        dass17
+        dass18
+        dass19
+        dass20
+        dass21
+      }
       demographics {
         race
         ethnicity
@@ -27,6 +50,29 @@ export const QUERY_USER = gql`
       phone
       age
       athleteType
+      dass {
+        dass1
+        dass2
+        dass3
+        dass4
+        dass5
+        dass6
+        dass7
+        dass8
+        dass9
+        dass10
+        dass11
+        dass12
+        dass13
+        dass14
+        dass15
+        dass16
+        dass17
+        dass18
+        dass19
+        dass20
+        dass21
+      }
       demographics {
         race
         ethnicity
@@ -45,6 +91,29 @@ export const QUERY_ME = gql`
       phone
       age
       athleteType
+      dass {
+        dass1
+        dass2
+        dass3
+        dass4
+        dass5
+        dass6
+        dass7
+        dass8
+        dass9
+        dass10
+        dass11
+        dass12
+        dass13
+        dass14
+        dass15
+        dass16
+        dass17
+        dass18
+        dass19
+        dass20
+        dass21
+      }
       demographics {
         race
         ethnicity

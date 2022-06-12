@@ -61,7 +61,6 @@ const Form = () => {
   const [addDass, {loading: dassLoading, error: dassError, data: dassStateData }] = useMutation(ADD_DASS);
 
 // =================Pagination===========================
-  // sets multistep pages
   const [page, setPage] = useState(0);
 
   const FormTitles = ["Demographics", "titlename2", "titlename3", "titlename4",]
@@ -78,10 +77,13 @@ const Form = () => {
         return <Stress dassData={dassData} setDassData={setDassData}/>
       default : 
         console.log('all done')
-
     }
   }
 
+  // navigates to home to populate updated db
+  const sendHomepage = async () => {
+    window.location.assign("/");
+  }
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -94,28 +96,23 @@ const Form = () => {
         variables: { ...dassData}
       });
 
-      // sends home after you click submit 
-      <Navigate to="/" replace />
+      // sends home after you click submit
+      sendHomepage(); 
     } catch (e) {
       console.error(e);
     }
   };
 
-  // navigates to home to populate updated db
-  // const sendHomepage = async () => {
-  //   window.location.assign("/");
-  // }
-
   const renderForm = () => {
 
-    // if data has already been submitted for demographics:
-    // if (demoData) {
-    //   return (
-    //     <>
-    //       {sendHomepage()}
-    //     </>
-    //   )
-    // }
+    // data exists already because of use state? why does this work?
+    if (!demoData && !dassData) {
+      return (
+        <>
+          {sendHomepage()}
+        </>
+      )
+    }
 
     if (user?.username && Auth.loggedIn && user.athleteType === 'Collegiate Athlete') {
       return (
@@ -146,6 +143,7 @@ const Form = () => {
                 if (page === FormTitles.length - 1){
                   handleFormSubmit(event);
                   console.log(dassData, demoData);
+
                 } else {
                   setPage((currPage) => currPage + 1);
                 }
@@ -153,9 +151,6 @@ const Form = () => {
                 {page === FormTitles.length - 1 ? "Submit" : "Next"}
                 </button>
 
-            {/* <div className='text-center'>
-              <button type="submit" className="button btn-success btn-block mb-4">Submit</button>
-            </div> */}
           </div>
         </>
       )
