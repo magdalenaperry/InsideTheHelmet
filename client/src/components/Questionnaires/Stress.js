@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Stress({ formData, setFormData }) {
+function Stress({ dassData, setDassData }) {
 
   const dass = [
     {
@@ -93,8 +93,8 @@ function Stress({ formData, setFormData }) {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    setFormData({
-      ...formData, [name]: value,
+    setDassData({
+      ...dassData, [name]: value,
     });
   };
 

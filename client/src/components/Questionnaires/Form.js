@@ -4,7 +4,7 @@ import { Link, Navigate, useParams } from 'react-router-dom';
 // import Logo from "../assets/logo192.png";
 
 import { useMutation, useQuery } from '@apollo/client';
-import { ADD_DEMO } from '../../utils/mutations';
+import { ADD_DEMO, ADD_DASS } from '../../utils/mutations';
 import {
   // QUERY_USERS,
   QUERY_USER,
@@ -34,7 +34,7 @@ const Form = () => {
 
   // if userData available, find 'me', or 'user' or return empty
   const user = userData?.me || userData?.user || {};
-  console.log(user);
+  // console.log(user);
 
   // show error
   if (userError) console.log(userError);
@@ -44,12 +44,7 @@ const Form = () => {
 
 
 // ==============Data UseStates=======================
-  const [formData, setFormData] = useState({
-    // race: '', 
-    // ethnicity: '', 
-    // dass: {},
-    // dass2:''
-    // confirmPassword: ''
+  const [dassData, setDassData] = useState({
   })
 
   const [demoData, setDemoData] = useState({
@@ -57,10 +52,13 @@ const Form = () => {
     ethnicity: '',
   })
 
+  const [formData, setFormData] = useState({
+  })
 
   // ==============Mutations===========================
-  const [addDemographics, { loading: demoLoading, error: demoError, data: demographicData }] = useMutation(ADD_DEMO);
+  const [addDemographics, { loading: demoLoading, error: demoError, data: demographicStateData }] = useMutation(ADD_DEMO);
 
+  const [addDass, {loading: dassLoading, error: dassError, data: dassStateData }] = useMutation(ADD_DASS);
 
 // =================Pagination===========================
   // sets multistep pages
@@ -77,7 +75,7 @@ const Form = () => {
       case 2 : 
         return <SportInjury formData={formData} setFormData={setFormData}/>
       case 3:
-        return <Stress formData={formData} setFormData={setFormData}/>
+        return <Stress dassData={dassData} setDassData={setDassData}/>
       default : 
         console.log('all done')
 
@@ -85,23 +83,16 @@ const Form = () => {
   }
 
 
-
-
-
-
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const { demographicData } = await addDemographics({
+      const { demographicStateData } = await addDemographics({
         variables: { ...demoData },
       });
-      // const { formData } 
-
-      // check to see if you can add multiple variables from different mutations here:
-      // const { questionData } = await addQuestions({
-      //   variables: { ...questionState },
-      // });
+      const { dassStateData } = await addDass({
+        variables: { ...dassData}
+      });
 
       // sends home after you click submit 
       <Navigate to="/" replace />
@@ -110,7 +101,7 @@ const Form = () => {
     }
   };
 
-  // naviagtes to home to populate updated db
+  // navigates to home to populate updated db
   // const sendHomepage = async () => {
   //   window.location.assign("/");
   // }
@@ -154,7 +145,7 @@ const Form = () => {
               onClick={(event) => {
                 if (page === FormTitles.length - 1){
                   handleFormSubmit(event);
-                  console.log(formData, demoData);
+                  console.log(dassData, demoData);
                 } else {
                   setPage((currPage) => currPage + 1);
                 }
