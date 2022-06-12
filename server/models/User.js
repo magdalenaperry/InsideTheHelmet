@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const Demographics = require(('./Demographics'))
+const Demographics = require('./Demographics')
 const Dass = require('./Dass')
 
 const userSchema = new Schema({
