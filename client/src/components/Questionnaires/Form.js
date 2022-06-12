@@ -18,7 +18,7 @@ import { SpinnerDotted } from 'spinners-react'
 import Demographics from './Demographics';
 import Relationships from './Relationships';
 import SportInjury from './SportInjury';
-import Stress from './Stress'
+import Dass from './Dass'
 
 
 
@@ -74,7 +74,7 @@ const Form = () => {
       case 2 : 
         return <SportInjury formData={formData} setFormData={setFormData}/>
       case 3:
-        return <Stress dassData={dassData} setDassData={setDassData}/>
+        return <Dass dassData={dassData} setDassData={setDassData}/>
       default : 
         console.log('all done')
     }
@@ -118,7 +118,7 @@ const Form = () => {
       return (
         <>
           <div className='header'>
-            <h3>{FormTitles[page]}</h3>
+            <h3 className='text-center text-uppercase titles'>{FormTitles[page]}</h3>
           </div>
           <div className='body'>
             <form 
@@ -130,6 +130,7 @@ const Form = () => {
           </div>
           <div className='footer'>
             <button
+            className='button'
               disabled={page === 0}
               onClick={() => {
                 setPage((currPage) => currPage - 1);
@@ -139,6 +140,7 @@ const Form = () => {
             </button>
 
             <button
+              className='button'
               onClick={(event) => {
                 if (page === FormTitles.length - 1){
                   handleFormSubmit(event);
@@ -155,19 +157,16 @@ const Form = () => {
         </>
       )
     }
-
   }
-
-
 
   // if (user?.username && Auth.loggedIn && user.athleteType === 'Collegiate Athlete') {
   return (
-    <div className='form container'>
-      <div className='progressbar'>
-        <div style={{width: page === 0 ? "25%" : page === 1 ? "50%" : page === 2 ? "75%" : "100%"}}></div>
-
+    <div className='container mt-5 pt-5'>
+      <div className="progress">
+        <div className="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style={{ width: page === 0 ? "25%" : page === 1 ? "50%" : page === 2 ? "75%" : "100%" }}></div>
       </div>
-      <div className='form-container container shadow my-4'>
+
+      <div className='form-container container shadow rounded my-4 py-5 px-5'>
         {renderForm()}
 
       </div>
