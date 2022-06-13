@@ -19,10 +19,10 @@ const sessionSchema = new Schema({
   thumbnail: {
     type: String
   }, 
-  users: [User]
+  // users: [User]
 
 });
 
-const Session = mongoose.model('Session', dassSchema);
+const Session = mongoose.model('Session', sessionSchema);
 
 module.exports = Session;

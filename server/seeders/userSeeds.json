@@ -7,5 +7,13 @@
     "age": "22",
     "athleteType": "Professional Athlete"
 
+  }, 
+  {
+    "username": "AdminPerry",
+    "email": "magperry16@gmail.com",
+    "password": "password12",
+    "phone": "(704)609-7506",
+    "age": "27",
+    "athleteType": "Other"
   }
 ]
