@@ -8,11 +8,11 @@ import { Link } from "react-router-dom";
 // import Hikers from "../assets/hikers.jpg"
 // import Kayak from "../assets/kayak.jpg"
 
-const styles = {
-  h2: {
-    letterSpacing: "2px",
-  }
-}
+// const styles = {
+//   h2: {
+//     letterSpacing: "2px",
+//   }
+// }
 
 const Home = () => {
 

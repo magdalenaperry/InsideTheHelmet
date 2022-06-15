@@ -13,9 +13,9 @@ html,
 }
 
 /* semantic stylings */
-header {
-  /* margin-top: 150px; */
-}
+/* header {
+  margin-top: 150px;
+} */
 
 nav{
   background-color: var(--nav-color);
@@ -60,12 +60,12 @@ main {
   color: var(--accentpi)
 }
 
-.button:hover {
+/* .button:hover {
 
 }
 .button:active{
 
-}
+} */
 
 /* text styling */
 h5 {
