@@ -2,6 +2,8 @@
   --nav-color: #cedada;
   --bg-color: 5px 42px;
   --mint: #CFF6E3; 
+  --accentgr: #386159;
+  --accentpi: #CE8871;
 }
 
 html,
@@ -31,9 +33,8 @@ main {
 /* Button stylings */
 .button{
     display: inline-block;
-    font-weight: 400;
+    font-weight: 200;
     line-height: 1.5;
-    background-color: red;
     color: #212529;
     text-align: center;
     text-decoration: none;
@@ -43,7 +44,7 @@ main {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color:var(--mint);
+    /* background-color:var(--mint); */
     border: 1px solid transparent;
     padding: .375rem .75rem;
     font-size: 1rem;
@@ -51,8 +52,13 @@ main {
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-.btn-green {
-  /* background-color: ; */
+.btn-accent {
+  background-color:var(--accentgr);
+  color: white;
+}
+
+.text-pink { 
+  color: var(--accentpi)
 }
 
 .button:hover {
