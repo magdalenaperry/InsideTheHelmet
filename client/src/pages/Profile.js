@@ -123,7 +123,8 @@ const Profile = () => {
                 {/* {user.age} */}
                 {/* </p> */}
                 <p className="">
-                    {user.demographics && user.demographics.map((demographic) => (
+                    {user.demographics && 
+                    user.demographics.map((demographic) => (
                       <>
                         <strong>Race:</strong> {demographic.race}
                       </>

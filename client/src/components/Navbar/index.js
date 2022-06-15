@@ -92,7 +92,7 @@ function Navbar() {
                   </div>
 
                   <div className="nav-item me-4 inline-block text-center">
-                    <Link to="/signup" className="nav-link button px-3">
+                    <Link to="/signup" className="nav-link button text-light btn-accent px-3">
                       Sign Up
                     </Link>
                   </div>

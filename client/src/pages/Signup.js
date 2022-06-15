@@ -147,10 +147,10 @@ const Signup = () => {
 
           {/* <!-- Submit button --> */}
           <div className='text-center'>
-            <button type="submit" className="button btn-block mb-4">Sign Up</button>
+            <button type="submit" className="button btn-accent px-4 btn-block mb-4">Sign Up</button>
 
             <p>Already a member? <Link
-              className='text-decoration-none fw-bold text-success'
+              className='text-decoration-none fw-bold text-pink'
               to="/Login">
              Login </Link>
               instead!

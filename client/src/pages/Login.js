@@ -104,7 +104,7 @@ const Login = () => {
 
           {/* <!-- Submit button --> */}
           <div className='text-center'>
-            <button type="submit" className="button btn-success btn-block mb-4">Login</button>
+            <button type="submit" className="button btn-accent px-4 btn-block mb-4 fw-light">Login</button>
 
             {/* <!-- Register buttons --> */}
             <p>Not a member? <Link

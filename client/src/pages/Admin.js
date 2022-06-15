@@ -7,6 +7,7 @@ import {
   QUERY_USERS,
   QUERY_USER,
   QUERY_ME,
+  QUERY_DEMO
 } from "../utils/queries";
 // Components
 import { SpinnerDotted } from 'spinners-react'
@@ -31,13 +32,18 @@ const Admin = () => {
 
   const user = meData?.me || meData?.user || {};
   // const users = usersData?.users || [];
-
-  console.log(user)
+  // console.log(user)
 
   const { loading: usersLoading, data: usersData, error: usersError } = useQuery(QUERY_USERS)
 
   const athletes = usersData || {}
-  console.log(athletes)
+  // console.log(athletes)
+
+  const { loading: demoLoading, data: demoData, error: demoError } = useQuery(QUERY_DEMO)
+
+  const demo = demoData || {}
+  console.log(demo)
+
 
   // const user = data?.me || data?.user || {};
   // console.log(user)

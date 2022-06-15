@@ -36,7 +36,7 @@ export const QUERY_USERS = gql`
         race
         ethnicity
         _id
-        }
+      }
     }
   }
 `;
@@ -122,3 +122,44 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+export const QUERY_DEMO = gql`
+query demographics {
+  demographics {
+    race
+    ethnicity
+    _id
+    users {
+      dass {
+        dass1
+        dass2
+        dass3
+        dass4
+        dass5
+        dass6
+        dass7
+        dass8
+        dass9
+        dass11
+        dass10
+        dass12
+        dass13
+        dass14
+        dass15
+        dass16
+        dass17
+        dass18
+        dass19
+        dass20
+        dass21
+        _id
+      }
+      age
+      demographics {
+        race
+        ethnicity
+      }
+    }
+  }
+}
+`

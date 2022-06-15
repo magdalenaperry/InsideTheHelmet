@@ -23,7 +23,7 @@ const Home = () => {
           <div className='mt-5'>
             <Link to="/signup">
               <button type="button"
-                className="button mb-5 px-4 py-2 my-2 fs-5">
+                className="button btn-accent mb-5 px-4 py-2 my-2 fs-5">
                 Sign Up
               </button>
             </Link>
