@@ -116,7 +116,7 @@ const Signup = () => {
           {/* <!-- Phone input --> */}
           <div className="form-outline mb-4">
             <input
-              type="text"
+              type="tel"
               className="form-control"
               name="phone"
               placeholder='Phone'

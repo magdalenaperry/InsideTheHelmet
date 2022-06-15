@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Demographics, Dass } = require("../models");
+const { User, Demographics, Dass, IPRRS, MSPSS } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -47,6 +47,43 @@ const resolvers = {
           .populate("demographics")
 
         return user.demographics.id(demographics._id);
+      }
+
+      throw new AuthenticationError("Not logged in");
+    },
+
+    addIPRRS: async (parent, args, context) => {
+      console.log(context);
+      if (context.user) {
+        const iprrs = new IPRRS(args);
+
+        const user = await User.findByIdAndUpdate(
+          context.user._id,
+          { $push: { iprrs: iprrs } },
+          { new: true }
+        )
+          .populate("iprrs")
+
+        return user.iprrs.id(iprrs._id);
+      }
+
+      throw new AuthenticationError("Not logged in");
+    },
+
+
+    addMSPSS: async (parent, args, context) => {
+      console.log(context);
+      if (context.user) {
+        const mspss = new MSPSS(args);
+
+        const user = await User.findByIdAndUpdate(
+          context.user._id,
+          { $push: { mspss: mspss } },
+          { new: true }
+        )
+          .populate("dass")
+
+        return user.mspss.id(mspss._id);
       }
 
       throw new AuthenticationError("Not logged in");
