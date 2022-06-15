@@ -16,8 +16,8 @@ import Auth from '../../utils/auth';
 import { SpinnerDotted } from 'spinners-react'
 
 import Demographics from './Demographics';
-import Relationships from './Relationships';
-import SportInjury from './SportInjury';
+import Relationships from './MSPSS';
+import SportInjury from './IPRRS';
 import Dass from './Dass'
 
 
@@ -50,6 +50,9 @@ const Form = () => {
   const [demoData, setDemoData] = useState({
     race: '',
     ethnicity: '',
+  })
+
+  const [iprrsData, setIprrsData] = useState({
   })
 
   const [formData, setFormData] = useState({
