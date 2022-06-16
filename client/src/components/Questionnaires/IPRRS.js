@@ -4,14 +4,34 @@ function IPRRS({ iprrsData, setIprrsData }) {
 
   const iprrs = [
     {
-      "number": "1",
-      "key": "dass1",
-      "question": "I found it hard to wind down."
+      "number": "0",
+      "key": "iprrs1",
+      "question": "My overall confidence to play is:"
     },
     {
-      "number": "2",
-      "key": "dass2",
-      "question": "I was aware of dryness of my mouth."
+      "number": "1",
+      "key": "iprrs2",
+      "question": "My confidence to play without pain is:"
+    },
+    {
+      "number": "3",
+      "key": "iprrs3",
+      "question": "My confidence to give 100% effort is:"
+    },
+    {
+      "number": "4",
+      "key": "iprrs4",
+      "question": "My confidence to not concentrate on the injury is:"
+    },
+    {
+      "number": "5",
+      "key": "iprrs5",
+      "question": "My confidence in the injured body part to handle demands of the situation is:"
+    },
+    {
+      "number": "6",
+      "key": "iprrs6",
+      "question": "My confidence in my skill level/ability is:"
     },
   ]
 
@@ -52,23 +72,12 @@ function IPRRS({ iprrsData, setIprrsData }) {
         {/* <td>Column content</td> */}
       </tr>
 
-
-
-
-
-
-
-
-
-
-
-
       <hr></hr>
 
       {iprrs.map(question => <div>
 
-        {/* <div className="rendered-form form-check-inline"> */}
-        {/* <div className="formbuilder-radio-group form-group field-radio-group"> */}
+        <div className="rendered-form form-check-inline">
+        <div className="formbuilder-radio-group form-group field-radio-group">
 
         <label
           htmlFor="radio-group"
@@ -79,13 +88,13 @@ function IPRRS({ iprrsData, setIprrsData }) {
         </label>
 
         <div
-          className="radioGroupBelow"
+          className="radioGroupBelow radio-group"
           onChange={handleChange}
           // value={formData.dass}
           // className="radio-group"
           required>
 
-            <label className="form-check-label " htmlFor="inlineRadio1">
+            <label className="form-check-label" htmlFor="inlineRadio1">
             <input
               className="form-check-input"
               type="radio"
@@ -175,10 +184,10 @@ function IPRRS({ iprrsData, setIprrsData }) {
 
 
         </div>
-        {/* </div> */}
+        </div>
 
 
-        {/* // </div> */}
+        </div>
       </div>)}
 
 

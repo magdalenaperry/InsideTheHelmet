@@ -3,6 +3,8 @@ const bcrypt = require('bcrypt');
 
 const Demographics = require('./Demographics')
 const Dass = require('./Dass')
+const IPRRS = require('./IPRRS')
+const MSPSS = require('./MSPSS')
 
 const userSchema = new Schema({
   username: {
@@ -36,6 +38,8 @@ const userSchema = new Schema({
   }, 
   demographics:[Demographics.schema], 
   dass:[Dass.schema],
+  iprrs: [IPRRS.schema],
+  mspss: [MSPSS.schema]
 });
 
 userSchema.pre('save', async function (next) {

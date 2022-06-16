@@ -4,7 +4,7 @@ import { Link, Navigate, useParams } from 'react-router-dom';
 // import Logo from "../assets/logo192.png";
 
 import { useMutation, useQuery } from '@apollo/client';
-import { ADD_DEMO, ADD_DASS } from '../../utils/mutations';
+import { ADD_DEMO, ADD_DASS, ADD_IPRRS, ADD_MSPSS } from '../../utils/mutations';
 import {
   // QUERY_USERS,
   QUERY_USER,
@@ -16,8 +16,8 @@ import Auth from '../../utils/auth';
 import { SpinnerDotted } from 'spinners-react'
 
 import Demographics from './Demographics';
-import Relationships from './MSPSS';
-import SportInjury from './IPRRS';
+import MSPSS from './MSPSS';
+import IPRRS from './IPRRS';
 import Dass from './Dass'
 
 
@@ -55,13 +55,17 @@ const Form = () => {
   const [iprrsData, setIprrsData] = useState({
   })
 
-  const [formData, setFormData] = useState({
+  const [mspssData, setMspssData] = useState({
   })
 
   // ==============Mutations===========================
   const [addDemographics, { loading: demoLoading, error: demoError, data: demographicStateData }] = useMutation(ADD_DEMO);
 
   const [addDass, { loading: dassLoading, error: dassError, data: dassStateData }] = useMutation(ADD_DASS);
+
+  const [addIprrs, { loading: iprrsLoading, error: iprrsError, data: iprrsStateData }] = useMutation(ADD_IPRRS);
+
+  const [addMspss, { loading:mspssLoading , error: mspssError , data: mspssStateData}] = useMutation(ADD_MSPSS);
 
   // =================Pagination===========================
   const [page, setPage] = useState(0);
@@ -73,9 +77,9 @@ const Form = () => {
       case 0:
         return <Demographics demoData={demoData} setDemoData={setDemoData} />;
       case 1:
-        return <Relationships formData={formData} setFormData={setFormData} />
+        return <MSPSS mspssData={mspssData} setMspssData={setMspssData} />
       case 2:
-        return <SportInjury formData={formData} setFormData={setFormData} />
+        return <IPRRS iprrsData={iprrsData} setIprrsData={setIprrsData} />
       case 3:
         return <Dass dassData={dassData} setDassData={setDassData} />
       default:
@@ -98,6 +102,16 @@ const Form = () => {
       const { dassStateData } = await addDass({
         variables: { ...dassData }
       });
+      const { iprrsStateData } = await addIprrs({
+        variables: { ...iprrsData }
+      });
+      const { mspssStateData } = await addMspss({
+        variables: { ...mspssData }
+      });
+
+      console.log(demographicStateData, dassStateData, iprrsStateData, mspssStateData);
+
+
 
       // sends home after you click submit
       sendHomepage();
@@ -147,7 +161,7 @@ const Form = () => {
               onClick={(event) => {
                 if (page === FormTitles.length - 1) {
                   handleFormSubmit(event);
-                  console.log(dassData, demoData);
+                  console.log(dassData, dassStateData);
 
                 } else {
                   setPage((currPage) => currPage + 1);

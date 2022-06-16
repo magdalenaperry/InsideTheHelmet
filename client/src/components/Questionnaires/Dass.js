@@ -159,7 +159,7 @@ function Dass({ dassData, setDassData }) {
 
             <label
               htmlFor="radio-group"
-              className="formbuilder-radio-group-label fs-5 mt-4">{question.question}
+              className="formbuilder-radio-group-label mt-4">{question.question}
 
 
               {/* <span className="tooltip-element" tooltip="Select one">?</span> */}
@@ -168,37 +168,41 @@ function Dass({ dassData, setDassData }) {
             <div 
             onChange={handleChange}
             // value={formData.dass}
-            className="radio-group"
+            className=" radioGroupBelow radio-group"
             required>
 
               {/* Option 0 */}
-              <div className="form-check form-check-inline fs-5">
-                <input
-                  className="form-check-input fs-5"
-                  required
-                  // checked=""
-                  type="radio"
-                  name={question.key}
-                  id="inlineRadio0" 
-                  value="0" />
 
-                <label className="form-check-label" htmlFor="inlineRadio1">0</label>
-              </div>
+
+                <label className="form-check-label" htmlFor="inlineRadio1">
+                  <input
+                    className="form-check-input"
+                    required
+                    // checked=""
+                    type="radio"
+                    name={question.key}
+                    // id="inlineRadio0"
+                    value="0" />
+                  
+                  0</label>
 
               {/* Option 1 */}
-              <div className="form-check form-check-inline fs-5">
+
+
+                <label className="form-check-label" htmlFor="inlineRadio1">
                 <input
                   className="form-check-input"
                   type="radio"
                   name={question.key}
                   // id="inlineRadio1" 
-                  value="1" />
-
-                <label className="form-check-label" htmlFor="inlineRadio1">1</label>
-              </div>
+                  value="1" />                  
+                  
+                  1</label>
 
               {/* Option 2 */}
-              <div className="form-check form-check-inline fs-5">
+
+                <label className="form-check-label" htmlFor="inlineRadio2">
+                  
                 <input
                   className="form-check-input"
                   // checked=""
@@ -206,22 +210,21 @@ function Dass({ dassData, setDassData }) {
                   name={question.key}
                   // id="inlineRadio2"
                   value="2" />
-
-                <label className="form-check-label" htmlFor="inlineRadio2">2</label>
-              </div>
+                  
+                  2</label>
 
               {/* Option 3 */}
-              <div className="form-check form-check-inline fs-5">
+
+
+                <label className="form-check-label" htmlFor="inlineRadio3">
                 <input
                   className="form-check-input"
                   type="radio"
                   name={question.key}
                   id="inlineRadio3"
-                  value="3" />
-
-                <label className="form-check-label" htmlFor="inlineRadio3">3</label>
-              </div>
-
+                  value="3" />                  
+                  
+                  3</label>
 
             </div>
           </div>
