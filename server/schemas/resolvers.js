@@ -81,7 +81,7 @@ const resolvers = {
           { $push: { mspss: mspss } },
           { new: true }
         )
-          .populate("dass")
+          .populate("mspss")
 
         return user.mspss.id(mspss._id);
       }

@@ -56,6 +56,7 @@ const Form = () => {
   })
 
   const [mspssData, setMspssData] = useState({
+    mspssSum: ''
   })
 
   // ==============Mutations===========================
@@ -65,23 +66,23 @@ const Form = () => {
 
   const [addIprrs, { loading: iprrsLoading, error: iprrsError, data: iprrsStateData }] = useMutation(ADD_IPRRS);
 
-  const [addMspss, { loading:mspssLoading , error: mspssError , data: mspssStateData}] = useMutation(ADD_MSPSS);
+  const [addMspss, { loading: mspssLoading, error: mspssError, data: mspssStateData }] = useMutation(ADD_MSPSS);
 
   // =================Pagination===========================
   const [page, setPage] = useState(0);
 
-  const FormTitles = ["Demographics", "titlename2", "titlename3", "titlename4",]
+  const FormTitles = ["Demographics", "DASS", "IPRRS", "MSPSS",]
 
   const PageDisplay = () => {
     switch (page) {
       case 0:
         return <Demographics demoData={demoData} setDemoData={setDemoData} />;
       case 1:
-        return <MSPSS mspssData={mspssData} setMspssData={setMspssData} />
+        return <Dass dassData={dassData} setDassData={setDassData} />
       case 2:
         return <IPRRS iprrsData={iprrsData} setIprrsData={setIprrsData} />
       case 3:
-        return <Dass dassData={dassData} setDassData={setDassData} />
+        return <MSPSS mspssData={mspssData} setMspssData={setMspssData} />
       default:
         console.log('all done')
     }
@@ -96,20 +97,19 @@ const Form = () => {
     event.preventDefault();
 
     try {
-      const { demographicStateData } = await addDemographics({
+      await addDemographics({
         variables: { ...demoData },
       });
-      const { dassStateData } = await addDass({
+      await addDass({
         variables: { ...dassData }
       });
-      const { iprrsStateData } = await addIprrs({
+      await addIprrs({
         variables: { ...iprrsData }
       });
-      const { mspssStateData } = await addMspss({
+      await addMspss({
         variables: { ...mspssData }
       });
 
-      console.log(demographicStateData, dassStateData, iprrsStateData, mspssStateData);
 
 
 
@@ -161,7 +161,6 @@ const Form = () => {
               onClick={(event) => {
                 if (page === FormTitles.length - 1) {
                   handleFormSubmit(event);
-                  console.log(dassData, dassStateData);
 
                 } else {
                   setPage((currPage) => currPage + 1);

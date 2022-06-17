@@ -62,6 +62,7 @@ query Users {
       mspss10
       mspss11
       mspss12
+      mspssSum
     }
   }
 }

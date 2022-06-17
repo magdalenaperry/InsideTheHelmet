@@ -56,8 +56,8 @@ mutation addIPRRS($iprrs1: String, $iprrs2: String, $iprrs3: String, $iprrs4: St
 
 
 export const ADD_MSPSS = gql`
-mutation addMSPSS($mspss1: String, $mspss2: String, $mspss3: String, $mspss4: String, $mspss5: String, $mspss6: String, $mspss7: String, $mspss8: String, $mspss9: String, $mspss10: String, $mspss11: String, $mspss12: String) {
-  addMSPSS(mspss1: $mspss1, mspss2: $mspss2, mspss3: $mspss3, mspss4: $mspss4, mspss5: $mspss5, mspss6: $mspss6, mspss7: $mspss7, mspss8: $mspss8, mspss9: $mspss9, mspss10: $mspss10, mspss11: $mspss11, mspss12: $mspss12,){
+mutation addMSPSS($mspss1: String, $mspss2: String, $mspss3: String, $mspss4: String, $mspss5: String, $mspss6: String, $mspss7: String, $mspss8: String, $mspss9: String, $mspss10: String, $mspss11: String, $mspss12: String, $mspssSum: String) {
+  addMSPSS(mspss1: $mspss1, mspss2: $mspss2, mspss3: $mspss3, mspss4: $mspss4, mspss5: $mspss5, mspss6: $mspss6, mspss7: $mspss7, mspss8: $mspss8, mspss9: $mspss9, mspss10: $mspss10, mspss11: $mspss11, mspss12: $mspss12, mspssSum: $mspssSum){
     _id
     mspss1
     mspss2
@@ -71,6 +71,7 @@ mutation addMSPSS($mspss1: String, $mspss2: String, $mspss3: String, $mspss4: St
     mspss10
     mspss11
     mspss12
+    mspssSum
   }
 }
 `;

@@ -42,6 +42,9 @@ const MSPSSSchema = new Schema({
   mspss12: {
     type: String,
   },
+  mspssSum: {
+    type: String,
+  }
 
 
 });

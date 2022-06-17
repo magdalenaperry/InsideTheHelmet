@@ -65,25 +65,36 @@ function MSPSS({ mspssData, setMspssData }) {
     },
   ]
 
-  // const sum = []
+
+  const sum = []
+  console.log(mspssData)
+
+  const sumArray = () => {
+    Object.values(mspssData).forEach(val => sum.push(+val))
+    const sumValues = sum.reduce((a, b) => a + b, 0);
+    // console.log(sumValues);
+    // return sumValues;
+
+    // sumValues.push(mspssData.mspssSum);
+    // console.log(mspssData.mspssSum)
+    return sumValues
+  }
+
+  const mspssValue = sumArray().toString();
+
+  // console.log(sumValues);
+  console.log(mspssValue);
   
-  // const mspssArray = () => Object.values(mspssData).forEach(val => sum.push(+val))
-  // console.log(sum)
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    // console.log(mspssData);
-    // Object.values(mspssData).forEach(val => sum.push(+val));
 
-    // const sumValues = value.reduce((a, b) => a + b, 0);
-    
-    
     setMspssData({
       ...mspssData, [name]: value
     });
-    
+
   }
-  
+
 
   return (
     <>
@@ -132,7 +143,7 @@ function MSPSS({ mspssData, setMspssData }) {
         {/* <td>Column content</td> */}
         {/* <td>Column content</td> */}
       </tr>
-      
+
 
 
 
@@ -217,12 +228,40 @@ function MSPSS({ mspssData, setMspssData }) {
                   value={7} />
                 7</label>
 
-{mspssArray()}
+
 
             </div>
           </div>
         </div>
-      </div>)}
+      </div>
+      
+      )}
+      <div className="form-outline mb-4">
+        <select
+          name="mspssSum"
+          type="select"
+          className="form-select"
+          id="race"
+          onChange={handleChange}
+          value={mspssData.mspssSum}
+        >
+          <option value={mspssValue}>{sumArray()}</option>
+        </select>
+      </div>
+
+{/* 
+
+      <input
+        className=''
+        onChange={handleChange}
+        type='text'
+        disabled
+        name={sum}
+        defaultValue= {sumArray}
+        value={mspssData.mspssSum}
+        placeholder={sumArray()}
+
+      /> */}
     </>
   )
 }
