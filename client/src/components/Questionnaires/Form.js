@@ -134,18 +134,19 @@ const Form = () => {
     if (user?.username && Auth.loggedIn && user.athleteType === 'Collegiate Athlete') {
       return (
         <>
-          <div className='header'>
+          <div className='form-header'>
             <h3 className='text-center text-uppercase titles'>{FormTitles[page]}</h3>
           </div>
-          <div className='body'>
+          <div className='form-body'>
             <form
             // onSubmit={handleFormSubmit}
+            className=''
             >
               {PageDisplay()}
 
             </form>
           </div>
-          <div className='footer'>
+          <div className='btn-footer'>
             <button
               className='button'
               disabled={page === 0}

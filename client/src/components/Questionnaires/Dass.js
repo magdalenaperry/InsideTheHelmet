@@ -121,41 +121,50 @@ function Dass({ dassData, setDassData }) {
 
   return (
     <>
-      <div className='fs-5 mt-5'>Please read each statement and circle a number 0, 1, 2 or 3 which indicates how much the statement
+      <div className='mt-5'>Please read each statement and circle a number 0, 1, 2 or 3 which indicates how much the statement
         applied to you over the past week. There are no right or wrong answers. Do not spend too much
         time on any statement.</div>
         <hr></hr>
-      <tr className='fs-5'>
-        <th className='pe-4 py-2' scope="row">0</th>
-        <td>Did not apply to me at all</td>
-        {/* <td>Column content</td> */}
-        {/* <td>Column content</td> */}
-      </tr>
-      <tr className='fs-5'>
-        <th className='pe-4 py-2' scope="row">1</th>
-        <td>Applied to me to some degree, or some of the time</td>
-        {/* <td>Column content</td> */}
-        {/* <td>Column content</td> */}
-      </tr>
-      <tr className='fs-5'>
-        <th className='pe-4 py-2' scope="row">2</th>
-        <td>Applied to me to a considerable degree or a good part of time</td>
-        {/* <td>Column content</td> */}
-        {/* <td>Column content</td> */}
-      </tr>
-      <tr className='fs-5'>
-        <th className='pe-4 py-2' scope="row">3</th>
-        <td>Applied to me very much or most of the time</td>
-        {/* <td>Column content</td> */}
-        {/* <td>Column content</td> */}
-      </tr>
+      
 
-      <hr></hr>
 
       {dass.map(question => <div>
 
         <div className="rendered-form form-check-inline">
           <div className="formbuilder-radio-group form-group field-radio-group">
+
+
+
+<div className='key col-12'>
+              <tr className=''>
+                <th className='pe-4 ' scope="row">0</th>
+                <td>Did not apply to me at all</td>
+                {/* <td>Column content</td> */}
+                {/* <td>Column content</td> */}
+              </tr>
+              <tr className=''>
+                <th className='pe-4 ' scope="row">1</th>
+                <td>Applied to me to some degree, or some of the time</td>
+                {/* <td>Column content</td> */}
+                {/* <td>Column content</td> */}
+              </tr>
+              <tr className=''>
+                <th className='pe-4 ' scope="row">2</th>
+                <td>Applied to me to a considerable degree or a good part of time</td>
+                {/* <td>Column content</td> */}
+                {/* <td>Column content</td> */}
+              </tr>
+              <tr className=''>
+                <th className='pe-4 ' scope="row">3</th>
+                <td>Applied to me very much or most of the time</td>
+                {/* <td>Column content</td> */}
+                {/* <td>Column content</td> */}
+              </tr>
+
+</div>
+
+
+
 
             <label
               htmlFor="radio-group"

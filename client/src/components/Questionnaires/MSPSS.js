@@ -84,10 +84,11 @@ function MSPSS({ mspssData, setMspssData }) {
 
   // console.log(sumValues);
   console.log(mspssValue);
-  
+
 
   const handleChange = (event) => {
     const { name, value } = event.target;
+
 
     setMspssData({
       ...mspssData, [name]: value
@@ -96,146 +97,157 @@ function MSPSS({ mspssData, setMspssData }) {
   }
 
 
+
+
+
   return (
     <>
 
-      <div className='fs-5 mt-5'>Read each statement carefully. Indicate how you feel about each statement.</div>
-      <hr></hr>
-      <tr className='fs-5'>
-        <th className='pe-4 py-2' scope="row">1</th>
-        <td>Very Strongly Disagree</td>
-        {/* <td>Column content</td> */}
-        {/* <td>Column content</td> */}
-      </tr>
-      <tr className='fs-5'>
-        <th className='pe-4 py-2' scope="row">2</th>
-        <td>Strongly Disagree</td>
-        {/* <td>Column content</td> */}
-        {/* <td>Column content</td> */}
-      </tr>
-      <tr className='fs-5'>
-        <th className='pe-4 py-2' scope="row">3</th>
-        <td>Mildly Disagree</td>
-        {/* <td>Column content</td> */}
-        {/* <td>Column content</td> */}
-      </tr>
-      <tr className='fs-5'>
-        <th className='pe-4 py-2' scope="row">4</th>
-        <td>Neutral</td>
-        {/* <td>Column content</td> */}
-        {/* <td>Column content</td> */}
-      </tr>
-      <tr className='fs-5'>
-        <th className='pe-4 py-2' scope="row">5</th>
-        <td>Mildy Agree</td>
-        {/* <td>Column content</td> */}
-        {/* <td>Column content</td> */}
-      </tr>
-      <tr className='fs-5'>
-        <th className='pe-4 py-2' scope="row">6</th>
-        <td>Strongly Agree</td>
-        {/* <td>Column content</td> */}
-        {/* <td>Column content</td> */}
-      </tr>
-      <tr className='fs-5'>
-        <th className='pe-4 py-2' scope="row">7</th>
-        <td>Very Strongly Agree</td>
-        {/* <td>Column content</td> */}
-        {/* <td>Column content</td> */}
-      </tr>
+        <hr></hr>
+        <div className='overflow-sticks'>
+        <p className=' mt-5'>Read each statement carefully. Indicate how you feel about each statement.
+        </p>
 
 
+        </div>
 
 
       <hr></hr>
+        {mspss.map(question => <div className='col-12'>
 
-      {mspss.map(question => <div>
+          <div className="rendered-form form-check-inline">
+            <div className="formbuilder-radio-group form-group field-radio-group">
 
-        <div className="rendered-form form-check-inline">
-          <div className="formbuilder-radio-group form-group field-radio-group">
-
-            <label
-              htmlFor="radio-group"
-              className="formbuilder-radio-group-label mt-4">{question.question}
-              {/* <span className="tooltip-element" tooltip="Select one">?</span> */}
-            </label>
-
-            <div
-              className="radioGroupBelow radio-group"
-              onChange={handleChange}
-              // value={formData.dass}
-              // className="radio-group"
-              required>
-
-              <label className="form-check-label" htmlFor="inlineRadio1">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name={question.key}
-                  // id="inlineRadio1" 
-                  value={1} />
-                1</label>
-
-              <label className="form-check-label " htmlFor="inlineRadio1">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name={question.key}
-                  // id="inlineRadio1" 
-                  value={2} />
-                2</label>
-
-              <label className="form-check-label " htmlFor="inlineRadio1">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name={question.key}
-                  // id="inlineRadio1" 
-                  value={3} />
-                3</label>
-
-              <label className="form-check-label " htmlFor="inlineRadio1">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name={question.key}
-                  // id="inlineRadio1" 
-                  value={4} />
-                4</label>
-
-              <label className="form-check-label " htmlFor="inlineRadio1">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name={question.key}
-                  // id="inlineRadio1" 
-                  value={5} />
-                5</label>
-              <label className="form-check-label " htmlFor="inlineRadio1">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name={question.key}
-                  // id="inlineRadio1" 
-                  value={6} />
-                6</label>
-              <label className="form-check-label " htmlFor="inlineRadio1">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name={question.key}
-                  // id="inlineRadio1" 
-                  value={7} />
-                7</label>
+            <div className='key col-12'>
+                <tr className=''>
+                  <th className='pe-4' scope="row">1</th>
+                  <td>Very Strongly Disagree</td>
+                  {/* <td>Column content</td> */}
+                  {/* <td>Column content</td> */}
+                </tr>
+                <tr className=''>
+                  <th className='pe-4' scope="row">2</th>
+                  <td>Strongly Disagree</td>
+                  {/* <td>Column content</td> */}
+                  {/* <td>Column content</td> */}
+                </tr>
+                <tr className=''>
+                  <th className='pe-4' scope="row">3</th>
+                  <td>Mildly Disagree</td>
+                  {/* <td>Column content</td> */}
+                  {/* <td>Column content</td> */}
+                </tr>
+                <tr className=''>
+                  <th className='pe-4' scope="row">4</th>
+                  <td>Neutral</td>
+                  {/* <td>Column content</td> */}
+                  {/* <td>Column content</td> */}
+                </tr>
+                <tr className=''>
+                  <th className='pe-4' scope="row">5</th>
+                  <td>Mildy Agree</td>
+                  {/* <td>Column content</td> */}
+                  {/* <td>Column content</td> */}
+                </tr>
+                <tr className=''>
+                  <th className='pe-4' scope="row">6</th>
+                  <td>Strongly Agree</td>
+                  {/* <td>Column content</td> */}
+                  {/* <td>Column content</td> */}
+                </tr>
+                <tr className=''>
+                  <th className='pe-4' scope="row">7</th>
+                  <td>Very Strongly Agree</td>
+                  {/* <td>Column content</td> */}
+                  {/* <td>Column content</td> */}
+                </tr>
+            </div>
 
 
 
+              <label
+                htmlFor="radio-group"
+                className="formbuilder-radio-group-label mt-4">{question.question}
+                {/* <span className="tooltip-element" tooltip="Select one">?</span> */}
+              </label>
+
+              <div
+                className="radioGroupBelow radio-group"
+                onChange={handleChange}
+                // value={formData.dass}
+                // className="radio-group"
+                required>
+
+                <label className="form-check-label" htmlFor="inlineRadio1">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name={question.key}
+                    // id="inlineRadio1" 
+                    value={1} />
+                  1</label>
+
+                <label className="form-check-label " htmlFor="inlineRadio1">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name={question.key}
+                    // id="inlineRadio1" 
+                    value={2} />
+                  2</label>
+
+                <label className="form-check-label " htmlFor="inlineRadio1">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name={question.key}
+                    // id="inlineRadio1" 
+                    value={3} />
+                  3</label>
+
+                <label className="form-check-label " htmlFor="inlineRadio1">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name={question.key}
+                    // id="inlineRadio1" 
+                    value={4} />
+                  4</label>
+
+                <label className="form-check-label " htmlFor="inlineRadio1">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name={question.key}
+                    // id="inlineRadio1" 
+                    value={5} />
+                  5</label>
+                <label className="form-check-label " htmlFor="inlineRadio1">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name={question.key}
+                    // id="inlineRadio1" 
+                    value={6} />
+                  6</label>
+                <label className="form-check-label " htmlFor="inlineRadio1">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name={question.key}
+                    // id="inlineRadio1" 
+                    value={7} />
+                  7</label>
+<hr />
+
+
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      
-      )}
+
+        )}
+
       <div className="form-outline mb-4">
         <select
           name="mspssSum"
@@ -249,7 +261,7 @@ function MSPSS({ mspssData, setMspssData }) {
         </select>
       </div>
 
-{/* 
+      {/* 
 
       <input
         className=''

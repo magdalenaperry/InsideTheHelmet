@@ -84,6 +84,21 @@ h5 {
   font-weight: 200;
 }
 
+.key {
+  background-color: var(--mint);
+  padding: 10px 15px 10px 15px;
+  /* font-size: 12px; */
+  margin-top: 20px;
+}
+
+.question-block{
+  width: 100%
+
+}
+
+
+
+
 /*======================
     404 page
 =======================*/
