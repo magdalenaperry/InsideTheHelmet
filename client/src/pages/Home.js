@@ -36,7 +36,7 @@ const Home = () => {
   const url =
     "https://d3ctxlq1ktw2nl.cloudfront.net/staging/2022-5-23/273221451-44100-2-104140b337a0f.m4a";
 
-  const url2 = 'https://www.youtube.com/watch?v=foE1mO2yM04'
+  // const url2 = 'https://www.youtube.com/watch?v=foE1mO2yM04'
 
   return (
     <>
@@ -159,7 +159,7 @@ const Home = () => {
 
 
 <p>- iFrame setup links to podcast, embedded into site.</p>
-          <iframe src="https://anchor.fm/magdalena-perry/embed/episodes/Hey-Brother--Avicci-e1kbdn3" height="102px" width="400px" frameborder="0" scrolling="no"></iframe>
+          <iframe src="https://anchor.fm/magdalena-perry/embed/episodes/Hey-Brother--Avicci-e1kbdn3" height="102px" width="400px" frameBorder="0" scrolling="no"></iframe>
 
 
           <br />
