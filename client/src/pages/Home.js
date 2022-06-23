@@ -4,19 +4,19 @@ import React from 'react';
 
 import { Link } from "react-router-dom";
 
-import ReactPlayer from "react-player";
-import PodcastPlayer from "@mrpollard/react-rss-podcast-player";
-import ReactAudioPlayer from "react-audio-player";
+// import ReactPlayer from "react-player";
+// import PodcastPlayer from "@mrpollard/react-rss-podcast-player";
+// import ReactAudioPlayer from "react-audio-player";
 // import ReactHowler from "react-howler";
-import { Media, Player, controls } from "react-media-player";
+// import { Media, Player, controls } from "react-media-player";
 
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 
 
-import { Bird } from "../assets/bird.mp3"
+// import { Bird } from "../assets/bird.mp3"
 
-const { PlayPause, MuteUnmute } = controls;
+// const { PlayPause, MuteUnmute } = controls;
 
 
 // https://codesandbox.io/s/react-audio-player-forked-to56ys?file=/src/App.js
@@ -81,7 +81,7 @@ const Home = () => {
 
 
           {/* with video formatting */}
-          <p>- if we opt to include video feed as well, use reactplayer</p>
+          {/* <p>- if we opt to include video feed as well, use reactplayer</p>
           <ReactPlayer
             controls
             className="react-player"
@@ -89,7 +89,7 @@ const Home = () => {
             // height="70px"
           url={url2}s
           />
-          <br />
+          <br /> */}
 
 
 
@@ -98,9 +98,9 @@ const Home = () => {
 
 
           {/* RSS feed needed for this to work */}
-          <p>-needs proper rss feed for this to work, use podcastplayer</p>
+          {/* <p>-needs proper rss feed for this to work, use podcastplayer</p>
           <PodcastPlayer url="https://anchor.fm/s/a1ec84ec/podcast/rss" />
-          <br />
+          <br /> */}
 
 
 
@@ -110,7 +110,7 @@ const Home = () => {
 
 
           {/* small audio file */}
-          <div className='col-12'>
+          {/* <div className='col-12'>
 <p>- small media player can include with titles, etc. Use ReactAudioPlayer</p>
             <img src="https://via.placeholder.com/900x300" alt="" className='img-fluid rounded border'/>
             <ReactAudioPlayer
@@ -126,7 +126,7 @@ const Home = () => {
           <br />
 
 
-          <br />
+          <br /> */}
 
 
 
